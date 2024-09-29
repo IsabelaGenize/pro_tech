@@ -35,7 +35,7 @@ const Team = () => {
         <TeamContainer>
             <TeamTitle>O que Nos Torna Únicos</TeamTitle>
             <TeamContent>
-                <TeamImage src="/path-to-team-image.jpg" alt="Nossa equipe" />
+                <TeamImage src="/img/myTeam.png" alt="Nossa equipe" />
                 <TeamDescription>
                     Nossa equipe é composta por especialistas apaixonados e experientes, prontos para enfrentar
                     desafios e buscar soluções inovadoras. Investimos constantemente em treinamento e desenvolvimento

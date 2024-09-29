@@ -49,7 +49,7 @@ const Footer = () => {
                 </FooterColumn>
                 <FooterColumn>
                     <FooterTitle>Contato</FooterTitle>
-                    <FooterLink href="tel:+551912345678">+55 (11) 9150-5030</FooterLink>
+                    <FooterLink href="tel:+5511918505030">+55 (11) 91850-5030</FooterLink>
                     <FooterLink href="mailto:contato@protech-consultancy.com">contato@protech-consultancy.com</FooterLink>
                 </FooterColumn>
             </FooterContent>

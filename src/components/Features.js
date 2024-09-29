@@ -38,11 +38,11 @@ const FeatureDescription = styled.p`
 
 const Features = () => {
     const features = [
-        { icon: 'icon-excelencia.png', title: 'Excelência', description: 'Nos destacamos em oferecer soluções superiores...' },
-        { icon: 'icon-comprometimento.png', title: 'Comprometimento', description: 'Estamos totalmente dedicados ao sucesso dos nossos clientes...' },
-        { icon: 'icon-integridade.png', title: 'Integridade', description: 'Operamos com os mais altos padrões éticos...' },
-        { icon: 'icon-transparencia.png', title: 'Transparência', description: 'Mantemos uma comunicação clara e honesta...' },
-        { icon: 'icon-inovacao.png', title: 'Inovação', description: 'Buscamos constantemente novas tecnologias e abordagens...' },
+        { icon: '/icons/excelencia 1.png', title: 'Excelência', description: 'Nos destacamos em oferecer soluções superiores...' },
+        { icon: '/icons/aperto-de-mao 1.png', title: 'Comprometimento', description: 'Estamos totalmente dedicados ao sucesso dos nossos clientes...' },
+        { icon: '/icons/integridade 1.png', title: 'Integridade', description: 'Operamos com os mais altos padrões éticos...' },
+        { icon: '/icons/lei 1.png', title: 'Transparência', description: 'Mantemos uma comunicação clara e honesta...' },
+        { icon: '/icons/inovacao 1.png', title: 'Inovação', description: 'Buscamos constantemente novas tecnologias e abordagens...' },
     ];
 
     return (

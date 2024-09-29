@@ -13,6 +13,13 @@ const Logo = styled.img`
     height: 40px;
 `;
 
+const LogoForm = styled.img`
+    height: 100px;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+`;
+
+
 const Nav = styled.nav`
     display: flex;
     gap: 1rem;
@@ -45,6 +52,14 @@ const ModalContent = styled.div`
   padding: 20px;
   border-radius: 5px;
   width: 300px;
+`;
+
+const Title = styled.h2`
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center; 
+  color: #142533;
 `;
 
 const Form = styled.form`
@@ -97,7 +112,7 @@ const Header = () => {
     return (
         <>
             <HeaderContainer>
-                <Logo src="logo.svg" alt="ProTech Consultancy" />
+                <Logo src= "/img/logo.svg" alt="ProTech Consultancy" />
                 <Nav>
                     <NavLink href="#sobre-nos">SOBRE NÓS</NavLink>
                     <NavLink href="#clientes">CLIENTES</NavLink>
@@ -108,7 +123,8 @@ const Header = () => {
             {showModal && (
                 <Modal>
                     <ModalContent>
-                        <h2>Formulário de Cadastro</h2>
+                        <LogoForm src= "/img/logo.svg" alt="logo"/>
+                        <Title>Formulário para Cadastro</Title>
                         <Form onSubmit={handleSubmit}>
                             <Input type="text" placeholder="Nome" required />
                             <Input type="email" placeholder="Email" required />
