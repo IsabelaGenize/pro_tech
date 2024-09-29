@@ -16,9 +16,8 @@ const Logo = styled.img`
 const LogoForm = styled.img`
     height: 100px;
     display: block;
-    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    margin: 0 auto;
 `;
-
 
 const Nav = styled.nav`
     display: flex;
@@ -48,6 +47,7 @@ const Modal = styled.div`
 `;
 
 const ModalContent = styled.div`
+  position: relative;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
@@ -58,7 +58,7 @@ const Title = styled.h2`
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: center; 
+  text-align: center;
   color: #142533;
 `;
 
@@ -74,21 +74,22 @@ const Input = styled.input`
 
 const SubmitButton = styled.button`
   padding: 10px;
-  background-color: #005580;
+  background-color: #18BAC7;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
 `;
 
 const CloseButton = styled.button`
-  padding: 5px 10px;
-  background-color: #cc0000;
-  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: #cc0000;
   border: none;
-  border-radius: 5px;
+  font-size: 24px;
   cursor: pointer;
-  margin-top: 10px;
 `;
 
 const Header = () => {
@@ -103,16 +104,22 @@ const Header = () => {
         setShowModal(false);
     };
 
+    const handleClickOutside = (e) => {
+        if (e.target.id === "modal-background") {
+            setShowModal(false);
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Adicione aqui a lógica para processar os dados do formulário
+        // Lógica para processar os dados do formulário
         setShowModal(false);
     };
 
     return (
         <>
             <HeaderContainer>
-                <Logo src= "/img/logo.svg" alt="ProTech Consultancy" />
+                <Logo src="/img/logo.svg" alt="ProTech Consultancy" />
                 <Nav>
                     <NavLink href="#sobre-nos">SOBRE NÓS</NavLink>
                     <NavLink href="#clientes">CLIENTES</NavLink>
@@ -121,16 +128,16 @@ const Header = () => {
                 </Nav>
             </HeaderContainer>
             {showModal && (
-                <Modal>
+                <Modal id="modal-background" onClick={handleClickOutside}>
                     <ModalContent>
-                        <LogoForm src= "/img/logo.svg" alt="logo"/>
-                        <Title>Formulário para Cadastro</Title>
+                        <CloseButton onClick={handleCloseModal}>&times;</CloseButton>
+                        <LogoForm src="/img/logo.svg" alt="logo" />
+                        <Title>Cadastre sua Empresa e Faça Parte</Title>
                         <Form onSubmit={handleSubmit}>
                             <Input type="text" placeholder="Nome" required />
                             <Input type="email" placeholder="Email" required />
                             <Input type="tel" placeholder="Telefone" />
                             <SubmitButton type="submit">Enviar</SubmitButton>
-                            <CloseButton onClick={handleCloseModal}>Fechar</CloseButton>
                         </Form>
                     </ModalContent>
                 </Modal>

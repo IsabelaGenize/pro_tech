@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const HeroContainer = styled.section`
@@ -22,14 +22,36 @@ const HeroSubtitle = styled.p`
 `;
 
 const Hero = () => {
-    return (
-        <HeroContainer>
-            <HeroContent>
-                <HeroTitle>SOFTWARE DEVELOPMENT</HeroTitle>
-                <HeroSubtitle>Soluções tecnológicas para o seu negócio</HeroSubtitle>
-            </HeroContent>
-        </HeroContainer>
-    );
+  const titles = [
+    'SOFTWARE DEVELOPMENT',
+    'INNOVATIVE SOLUTIONS',
+    'EXPERT CONSULTING'
+  ];
+
+  const subtitles = [
+    'Soluções tecnológicas para o seu negócio',
+    'Inovações para transformar sua empresa',
+    'Consultoria especializada para seu projeto'
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    }, 5000); // Troca de texto a cada 3 segundos
+
+    return () => clearInterval(interval); // Limpa o intervalo quando o componente desmonta
+  }, [titles.length]);
+
+  return (
+    <HeroContainer>
+      <HeroContent>
+        <HeroTitle>{titles[currentIndex]}</HeroTitle>
+        <HeroSubtitle>{subtitles[currentIndex]}</HeroSubtitle>
+      </HeroContent>
+    </HeroContainer>
+  );
 };
 
-export default Hero;
+export default Hero;
