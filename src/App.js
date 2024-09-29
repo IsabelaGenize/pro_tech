@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styled from 'styled-components';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Features from './components/Features';
+import Team from './components/Team';
+import Footer from './components/Footer';
+
+const AppContainer = styled.div`
+    background: linear-gradient(to right, #001f3f, #003366);
+    color: white;
+    min-height: 100vh;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <AppContainer>
+            <Header />
+            <Hero />
+            <About />
+            <Features />
+            <Team />
+            <Footer />
+        </AppContainer>
+    );
 }
 
 export default App;
