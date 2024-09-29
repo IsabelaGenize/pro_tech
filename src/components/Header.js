@@ -97,7 +97,7 @@ const Header = () => {
     return (
         <>
             <HeaderContainer>
-                <Logo src="/path-to-your-logo.png" alt="ProTech Consultancy" />
+                <Logo src="logo.svg" alt="ProTech Consultancy" />
                 <Nav>
                     <NavLink href="#sobre-nos">SOBRE NÓS</NavLink>
                     <NavLink href="#clientes">CLIENTES</NavLink>
